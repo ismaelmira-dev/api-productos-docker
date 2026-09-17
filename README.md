@@ -76,39 +76,23 @@ el contenedor creado a partir de ella.
 La imagen `api-productos:1.0` con nombre y tag propios. Pesa 201 MB en
 disco por el uso de la variante `alpine`.
 
-### Contenedor en ejecución
-
-![docker ps](docs/01-docker-images.png)
-
-### Registros del contenedor
-
-![docker logs](docs/01-docker-images.png)
-
 ### Endpoints funcionando
 
 ![Endpoints](docs/02-endpoints-curl.png)
 
-Los cinco endpoints probados con curl contra el contenedor.
+Los cinco endpoints del CRUD probados con curl contra el contenedor en
+ejecución.
 
 ### Manejo de errores
 
-![Error 404](03-casos-de-error.png)
+![Casos de error](docs/03-casos-de-error.png)
 
-Solicitud de un producto inexistente: responde 404.
-
-![Error 400](03-casos-de-error.png)
-
-Creación sin el campo precio: responde 400.
+Solicitud de un producto inexistente: responde 404. Creación sin el campo
+precio: responde 400.
 
 ### Ciclo de vida del contenedor
 
-![Ciclo de vida](04-ciclo-de-vida.png)
+![Ciclo de vida](docs/04-ciclo-de-vida.png)
 
 Al detener el contenedor desaparece de `docker ps` pero sigue listado en
 `docker ps -a` con estado `Exited`, y puede reiniciarse con `docker start`.
-
-## Nota sobre persistencia
-
-Los datos se almacenan en memoria, por lo que al reiniciar el contenedor
-vuelven al estado inicial. La persistencia con volúmenes corresponde al
-Proyecto 2.
